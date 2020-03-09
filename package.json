@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "api": "cd ./NCNews-BE && nodemon server.js",
+    "client": "cd ./NCNews-FE && yarn start",
+    "build": "cd NCNews-FE && yarn build",
+    "start": "concurrently 'yarn run api' 'yarn run client'"
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
