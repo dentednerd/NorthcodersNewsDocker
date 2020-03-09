@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab:700');
+
+html, body {
+  background-color:#eee;
+  font: normal 14px 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #a0c9d7;
+  text-decoration: none;
+}
+
+a h2 {
+  color: #222;
+}
+
+h2 {
+  font-family: "Zilla Slab", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  color: #354262;
+  font-family: "Zilla Slab", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
