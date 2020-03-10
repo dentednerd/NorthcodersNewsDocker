@@ -9,7 +9,6 @@ I've combined both the back-end and front-end NCNews sprints into a single MERN-
 - [Nodejs](https://nodejs.org/en/)
 - [MongoDB](https://www.mongodb.com/)
 - [Docker](https://www.docker.com/)
-- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 ## setup
 
@@ -28,6 +27,6 @@ Northcoders News will be available on `localhost:8000`.
 
 ## deployment
 
-Northcoders News is hosted remotely on Heroku, at [https://northcoders-news-dentednerd-v2.herokuapp.com/](https://northcoders-news-dentednerd-v2.herokuapp.com/).
+Northcoders News is hosted remotely on Heroku, at [https://northcoders-news-dentednerd-v2.herokuapp.com/](https://northcoders-news-dentednerd-v2.herokuapp.com/). Pushing to the master branch automatically triggers a deploy to Heroku.
 
-1. `git push heroku master`
+1. `git push origin master`
