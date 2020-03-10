@@ -6,14 +6,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-const config = require('./config');
-const PORT = config.PORT[process.env.NODE_ENV] || process.env.PORT;
 const router = require('./routes/index');
 
 let db = 'mongodb://dentednerd:ForTheHorde678@ds227045.mlab.com:27045/ncnews-mongo';
+let port = process.env.PORT || 8000;
 
 if (process.env.NODE_ENV === 'test') {
   db = 'mongodb://localhost/northcoders-news-api-test';
+  port = 3090;
 }
 
 mongoose.connect(db, function(err) {
@@ -34,8 +34,8 @@ app.get('*', (request, response) => {
 	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
-app.listen(PORT, function() {
-  console.log(`Express server listening on port ${PORT}`);
+app.listen(port, function() {
+  console.log(`Express server listening on port ${port}`);
 });
 
 module.exports = app;
