@@ -1,4 +1,4 @@
 module.exports = {
-  ROOT: 'http://localhost:8000/api',
+  ROOT: '/api',
   USERNAME: 'northcoder'
 };

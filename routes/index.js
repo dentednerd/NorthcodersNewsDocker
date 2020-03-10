@@ -17,7 +17,7 @@ const {
 } = require('../controllers/comments');
 const { getAllUsers, getUser } = require('../controllers/users');
 
-router.get('/api', (req, res) => res.send("Welcome to dentednerd's Northcoders News API! Try /topics, /users or /articles."));
+router.get('/', (req, res) => res.send("Welcome to dentednerd's Northcoders News API! Try /topics, /users or /articles."));
 router.get('/topics', getAllTopics);
 router.get('/topics/:topic_id/articles', getArticlesByTopic);
 router.get('/articles', getAllArticles);
