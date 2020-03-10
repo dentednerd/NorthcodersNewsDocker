@@ -90,7 +90,7 @@ class Sidebar extends React.Component {
         <StyledSection>
           <UserList>
             <h3>Users</h3>
-            {this.props.users && this.props.users.map(user => (
+            {this.props.users && this.props.users.length && this.props.users.map(user => (
               <Link to={`/users/${user.username}`} key={user.name}>
                 <li>
                   <img src={user.avatar_url} alt={user.name} />
