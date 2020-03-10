@@ -12,6 +12,7 @@ const PORT = config.PORT[process.env.NODE_ENV] || process.env.PORT;
 const router = require('./routes/index');
 
 mongoose.connect(db, function(err) {
+  console.log('*****DB: ', db);
   if (!err) console.log(`Successfully connected to ${db}`);
 }).catch((err) => console.log('Error connecting to database: ', err));
 
