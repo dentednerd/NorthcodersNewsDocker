@@ -7,14 +7,18 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const config = require('./config');
-const db = 'mongodb://dentednerd:ForTheHorde678@ds227045.mlab.com:27045/ncnews-mongo';
 const PORT = config.PORT[process.env.NODE_ENV] || process.env.PORT;
 const router = require('./routes/index');
 
+let db = 'mongodb://dentednerd:ForTheHorde678@ds227045.mlab.com:27045/ncnews-mongo';
+
+if (process.env.NODE_ENV === 'test') {
+  db = 'mongodb://localhost/northcoders-news-api-test';
+}
+
 mongoose.connect(db, function(err) {
-  console.log('*****DB: ', db);
   if (!err) console.log(`Successfully connected to ${db}`);
-}).catch((err) => console.log('Error connecting to database: ', err));
+}).catch((err) => console.log(`Error connecting to ${db}:`, err));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
