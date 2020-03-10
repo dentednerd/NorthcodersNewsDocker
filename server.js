@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const config = require('./config');
-const db = config.DB[process.env.NODE_ENV] || process.env.DB;
+const db = 'mongodb://dentednerd:ForTheHorde678@ds227045.mlab.com:27045/ncnews-mongo';
 const PORT = config.PORT[process.env.NODE_ENV] || process.env.PORT;
 const router = require('./routes/index');
 
