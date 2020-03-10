@@ -1,11 +1,38 @@
 {
+  "name": "ncnews-docker",
+  "version": "1.1.0",
+  "description": "A Reddit API clone, using MongoDB, Express, React and Nodejs.",
+  "main": "config.js",
   "scripts": {
-    "api": "cd ./NCNews-BE && nodemon server.js",
-    "client": "cd ./NCNews-FE && yarn start",
-    "build": "cd NCNews-FE && yarn build",
-    "start": "concurrently 'yarn run api' 'yarn run client'"
+    "test": "node seed/test.seed.js && mocha ./spec",
+    "seed": "node seed/seed.js",
+    "start": "nodemon server.js",
+    "precommit": "npm test"
   },
+  "author": "Joey Imlay",
+  "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "@typescript-eslint/parser": "^2.23.0",
+    "async": "^2.1.4",
+    "body-parser": "^1.19.0",
+    "chance": "^1.0.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "express": "^4.17.1",
+    "log4js": "^1.0.1",
+    "moment": "^2.24.0",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "husky": "^0.13.4",
+    "supertest": "^3.0.0"
   }
 }

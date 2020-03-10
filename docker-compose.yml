@@ -12,8 +12,9 @@ services:
   ncnews-be:
     container_name: 'NCNewsAPI'
     build:
-      context: ./NCNews-BE
-    command: /bin/sh -c 'yarn && node seed/seed.js && yarn start'
+      context: ./
+      dockerfile: Dockerfile
+    command: /bin/sh -c 'yarn && node seed/seed.js && node server.js'
     volumes:
       - ./:/app:delegated
       - node_modules:/app/node_modules
@@ -25,7 +26,7 @@ services:
   ncnews-fe:
     container_name: 'NCNewsClient'
     build:
-      context: ./NCNews-FE
+      context: ./client
     command: /bin/sh -c 'yarn && yarn build && yarn start'
     volumes:
       - ./:/app:delegated
