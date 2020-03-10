@@ -18,12 +18,12 @@ mongoose.connect(db, function(err) {
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-}
-
 app.use('/', express.static(path.join(__dirname, '/client/build')));
 app.use('/api', router);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.listen(PORT, function() {
   console.log(`Express server listening on port ${PORT}`);
